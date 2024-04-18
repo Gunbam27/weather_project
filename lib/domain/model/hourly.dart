@@ -8,9 +8,9 @@ part 'hourly.g.dart';
 class Hourly with _$Hourly {
   const factory Hourly({
     required List<String> time,
-    required List<double> temperature,
-    required List<double> rain,
-    required List<int> weatherCode,
+    required List<num> temperature,
+    required List<num> rain,
+    required List<num> weatherCode,
 
   }) = _Hourly;
 
