@@ -1,16 +1,21 @@
 class HourlyDto {
   HourlyDto({
-      this.time, 
-      this.temperature2m, 
-      this.rain, 
-      this.weatherCode,});
+    this.time,
+    this.temperature2m,
+    this.rain,
+    this.weatherCode,
+  });
 
   HourlyDto.fromJson(dynamic json) {
     time = json['time'] != null ? json['time'].cast<String>() : [];
-    temperature2m = json['temperature_2m'] != null ? json['temperature_2m'].cast<num>() : [];
+    temperature2m = json['temperature_2m'] != null
+        ? json['temperature_2m'].cast<num>()
+        : [];
     rain = json['rain'] != null ? json['rain'].cast<num>() : [];
-    weatherCode = json['weather_code'] != null ? json['weather_code'].cast<num>() : [];
+    weatherCode =
+        json['weather_code'] != null ? json['weather_code'].cast<num>() : [];
   }
+
   List<String>? time;
   List<num>? temperature2m;
   List<num>? rain;
@@ -24,15 +29,15 @@ class HourlyDto {
     map['weather_code'] = weatherCode;
     return map;
   }
-
 }
 
 class HourlyUnits {
   HourlyUnits({
-      this.time, 
-      this.temperature2m, 
-      this.rain, 
-      this.weatherCode,});
+    this.time,
+    this.temperature2m,
+    this.rain,
+    this.weatherCode,
+  });
 
   HourlyUnits.fromJson(dynamic json) {
     time = json['time'];
@@ -40,6 +45,7 @@ class HourlyUnits {
     rain = json['rain'];
     weatherCode = json['weather_code'];
   }
+
   String? time;
   String? temperature2m;
   String? rain;
@@ -53,5 +59,4 @@ class HourlyUnits {
     map['weather_code'] = weatherCode;
     return map;
   }
-
 }
