@@ -10,11 +10,18 @@ class WeatherViewModel with ChangeNotifier {
   final HourlyRepository _hourlyRepository;
 
   bool _isLoading = false;
+
   bool get isLoading => _isLoading;
 
   Future<Hourly> _hourly = Future(
-      () => Hourly(time: [], temperature: [], rain: [], weatherCode: []));
+          () => Hourly(time: [], temperature: [], rain: [], weatherCode: []));
+
   Future<Hourly> get hourly => _hourly;
+
+  Hourly _hourlyData = Hourly(
+      time: [], temperature: [], rain: [], weatherCode: []);
+
+  Hourly get hourlyData => _hourlyData;
 
   List<String> _hourlyTimeList = [];
   List<num> _hourlyTemperatureList = [];
@@ -34,13 +41,14 @@ class WeatherViewModel with ChangeNotifier {
   Future<void> showList(double lat, double lng) async {
     _hourly = _hourlyRepository.getHourly(lat, lng);
 
-    // _hourlyTimeList = _data.time;
-    //
-    // _hourlyTemperatureList = _data.temperature;
-    //
-    // _hourlyWeatherCodeList = _data.weatherCode;
-    //
-    // _hourlyRainList = _data.rain;
+    notifyListeners();
+  }
+
+  Future<void> sunnyList(double lat, double lng) async {
+    _hourly = _hourlyRepository.getHourly(lat, lng);
+
+    _hourlyData = await _hourly;
+
     notifyListeners();
   }
 }
