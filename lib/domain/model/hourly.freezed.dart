@@ -21,9 +21,9 @@ Hourly _$HourlyFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Hourly {
   List<String> get time => throw _privateConstructorUsedError;
-  List<double> get temperature => throw _privateConstructorUsedError;
-  List<double> get rain => throw _privateConstructorUsedError;
-  List<int> get weatherCode => throw _privateConstructorUsedError;
+  List<num> get temperature => throw _privateConstructorUsedError;
+  List<num> get rain => throw _privateConstructorUsedError;
+  List<num> get weatherCode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,9 +37,9 @@ abstract class $HourlyCopyWith<$Res> {
   @useResult
   $Res call(
       {List<String> time,
-      List<double> temperature,
-      List<double> rain,
-      List<int> weatherCode});
+      List<num> temperature,
+      List<num> rain,
+      List<num> weatherCode});
 }
 
 /// @nodoc
@@ -68,15 +68,15 @@ class _$HourlyCopyWithImpl<$Res, $Val extends Hourly>
       temperature: null == temperature
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<num>,
       rain: null == rain
           ? _value.rain
           : rain // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<num>,
       weatherCode: null == weatherCode
           ? _value.weatherCode
           : weatherCode // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<num>,
     ) as $Val);
   }
 }
@@ -90,9 +90,9 @@ abstract class _$$HourlyImplCopyWith<$Res> implements $HourlyCopyWith<$Res> {
   @useResult
   $Res call(
       {List<String> time,
-      List<double> temperature,
-      List<double> rain,
-      List<int> weatherCode});
+      List<num> temperature,
+      List<num> rain,
+      List<num> weatherCode});
 }
 
 /// @nodoc
@@ -119,15 +119,15 @@ class __$$HourlyImplCopyWithImpl<$Res>
       temperature: null == temperature
           ? _value._temperature
           : temperature // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<num>,
       rain: null == rain
           ? _value._rain
           : rain // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<num>,
       weatherCode: null == weatherCode
           ? _value._weatherCode
           : weatherCode // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<num>,
     ));
   }
 }
@@ -137,9 +137,9 @@ class __$$HourlyImplCopyWithImpl<$Res>
 class _$HourlyImpl implements _Hourly {
   const _$HourlyImpl(
       {required final List<String> time,
-      required final List<double> temperature,
-      required final List<double> rain,
-      required final List<int> weatherCode})
+      required final List<num> temperature,
+      required final List<num> rain,
+      required final List<num> weatherCode})
       : _time = time,
         _temperature = temperature,
         _rain = rain,
@@ -156,25 +156,25 @@ class _$HourlyImpl implements _Hourly {
     return EqualUnmodifiableListView(_time);
   }
 
-  final List<double> _temperature;
+  final List<num> _temperature;
   @override
-  List<double> get temperature {
+  List<num> get temperature {
     if (_temperature is EqualUnmodifiableListView) return _temperature;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_temperature);
   }
 
-  final List<double> _rain;
+  final List<num> _rain;
   @override
-  List<double> get rain {
+  List<num> get rain {
     if (_rain is EqualUnmodifiableListView) return _rain;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_rain);
   }
 
-  final List<int> _weatherCode;
+  final List<num> _weatherCode;
   @override
-  List<int> get weatherCode {
+  List<num> get weatherCode {
     if (_weatherCode is EqualUnmodifiableListView) return _weatherCode;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_weatherCode);
@@ -224,20 +224,20 @@ class _$HourlyImpl implements _Hourly {
 abstract class _Hourly implements Hourly {
   const factory _Hourly(
       {required final List<String> time,
-      required final List<double> temperature,
-      required final List<double> rain,
-      required final List<int> weatherCode}) = _$HourlyImpl;
+      required final List<num> temperature,
+      required final List<num> rain,
+      required final List<num> weatherCode}) = _$HourlyImpl;
 
   factory _Hourly.fromJson(Map<String, dynamic> json) = _$HourlyImpl.fromJson;
 
   @override
   List<String> get time;
   @override
-  List<double> get temperature;
+  List<num> get temperature;
   @override
-  List<double> get rain;
+  List<num> get rain;
   @override
-  List<int> get weatherCode;
+  List<num> get weatherCode;
   @override
   @JsonKey(ignore: true)
   _$$HourlyImplCopyWith<_$HourlyImpl> get copyWith =>
