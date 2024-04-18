@@ -21,11 +21,15 @@ Hourly _$HourlyFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Hourly {
   List<String> get time => throw _privateConstructorUsedError;
+
   List<num> get temperature => throw _privateConstructorUsedError;
+
   List<num> get rain => throw _privateConstructorUsedError;
+
   List<num> get weatherCode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $HourlyCopyWith<Hourly> get copyWith => throw _privateConstructorUsedError;
 }
@@ -34,6 +38,7 @@ mixin _$Hourly {
 abstract class $HourlyCopyWith<$Res> {
   factory $HourlyCopyWith(Hourly value, $Res Function(Hourly) then) =
       _$HourlyCopyWithImpl<$Res, Hourly>;
+
   @useResult
   $Res call(
       {List<String> time,
@@ -49,6 +54,7 @@ class _$HourlyCopyWithImpl<$Res, $Val extends Hourly>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -86,6 +92,7 @@ abstract class _$$HourlyImplCopyWith<$Res> implements $HourlyCopyWith<$Res> {
   factory _$$HourlyImplCopyWith(
           _$HourlyImpl value, $Res Function(_$HourlyImpl) then) =
       __$$HourlyImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -149,6 +156,7 @@ class _$HourlyImpl implements _Hourly {
       _$$HourlyImplFromJson(json);
 
   final List<String> _time;
+
   @override
   List<String> get time {
     if (_time is EqualUnmodifiableListView) return _time;
@@ -157,6 +165,7 @@ class _$HourlyImpl implements _Hourly {
   }
 
   final List<num> _temperature;
+
   @override
   List<num> get temperature {
     if (_temperature is EqualUnmodifiableListView) return _temperature;
@@ -165,6 +174,7 @@ class _$HourlyImpl implements _Hourly {
   }
 
   final List<num> _rain;
+
   @override
   List<num> get rain {
     if (_rain is EqualUnmodifiableListView) return _rain;
@@ -173,6 +183,7 @@ class _$HourlyImpl implements _Hourly {
   }
 
   final List<num> _weatherCode;
+
   @override
   List<num> get weatherCode {
     if (_weatherCode is EqualUnmodifiableListView) return _weatherCode;
@@ -232,12 +243,16 @@ abstract class _Hourly implements Hourly {
 
   @override
   List<String> get time;
+
   @override
   List<num> get temperature;
+
   @override
   List<num> get rain;
+
   @override
   List<num> get weatherCode;
+
   @override
   @JsonKey(ignore: true)
   _$$HourlyImplCopyWith<_$HourlyImpl> get copyWith =>

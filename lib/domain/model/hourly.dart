@@ -11,7 +11,6 @@ class Hourly with _$Hourly {
     required List<num> temperature,
     required List<num> rain,
     required List<num> weatherCode,
-
   }) = _Hourly;
 
   factory Hourly.fromJson(Map<String, Object?> json) => _$HourlyFromJson(json);

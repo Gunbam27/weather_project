@@ -10,7 +10,8 @@ class WeatherDto {
     this.timezoneAbbreviation,
     this.elevation,
     this.hourlyUnits,
-    this.hourly,});
+    this.hourly,
+  });
 
   WeatherDto.fromJson(dynamic json) {
     latitude = json['latitude'];
@@ -20,9 +21,12 @@ class WeatherDto {
     timezone = json['timezone'];
     timezoneAbbreviation = json['timezone_abbreviation'];
     elevation = json['elevation'];
-    hourlyUnits = json['hourly_units'] != null ? HourlyUnits.fromJson(json['hourly_units']) : null;
+    hourlyUnits = json['hourly_units'] != null
+        ? HourlyUnits.fromJson(json['hourly_units'])
+        : null;
     hourly = json['hourly'] != null ? HourlyDto.fromJson(json['hourly']) : null;
   }
+
   num? latitude;
   num? longitude;
   num? generationtimeMs;
@@ -50,5 +54,4 @@ class WeatherDto {
     }
     return map;
   }
-
 }
