@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:weather_app/data/data_source/hourly_api.dart';
-import 'package:weather_app/data/repository/hourly_repository_impl.dart';
+import 'package:weather_app/domain/model/hourly.dart';
 import 'package:weather_app/domain/repository/hourly_repository.dart';
 
 class WeatherViewModel with ChangeNotifier {
@@ -11,8 +10,11 @@ class WeatherViewModel with ChangeNotifier {
   final HourlyRepository _hourlyRepository;
 
   bool _isLoading = false;
-
   bool get isLoading => _isLoading;
+
+  Future<Hourly> _hourly = Future(
+      () => Hourly(time: [], temperature: [], rain: [], weatherCode: []));
+  Future<Hourly> get hourly => _hourly;
 
   List<String> _hourlyTimeList = [];
   List<num> _hourlyTemperatureList = [];
@@ -29,20 +31,16 @@ class WeatherViewModel with ChangeNotifier {
 
   List<num> get hourlyWeatherCodeList => _hourlyWeatherCodeList;
 
-  void showList(double lat, double lng) async {
-    final _data = await _hourlyRepository.getHourly(lat, lng);
-    _hourlyTimeList = _data.time;
+  Future<void> showList(double lat, double lng) async {
+    _hourly = _hourlyRepository.getHourly(lat, lng);
 
-    _hourlyTemperatureList = _data.temperature;
-
-    _hourlyWeatherCodeList = _data.weatherCode;
-
-    _hourlyRainList = _data.rain;
+    // _hourlyTimeList = _data.time;
+    //
+    // _hourlyTemperatureList = _data.temperature;
+    //
+    // _hourlyWeatherCodeList = _data.weatherCode;
+    //
+    // _hourlyRainList = _data.rain;
+    notifyListeners();
   }
-}
-
-void main() async {
-  WeatherViewModel viewModel = WeatherViewModel(
-      hourlyRepository: HourlyRepositoryImpl(dataSource: WeatherDataSource()));
-  viewModel.showList(52, 13);
 }
